@@ -1,5 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    /* font-family: ; */
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+            AppleGothic, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    height: 20vh;
+}
+
+main {
+    height: 80vh;
+}
+
+#watch-toggle {
+    position: absolute;
+    bottom: 0px;
+}
+
+@media screen and (max-width: 450px) {
+
+}
+
+@media screen and (min-width: 450px) {
+
+}
+
+@media screen and (min-width: 1000px) {
+
 }
