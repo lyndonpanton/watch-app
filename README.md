@@ -8,3 +8,4 @@ stopwatch, and start a timer.
 ## Credits
 
 - [Lyndon Mykal Panton | Developer](https://github.com/lyndonpanton)
+- [Font Awesome | Icon Library](https://fontawesome.com/)
