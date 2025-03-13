@@ -28,8 +28,6 @@ main {
     bottom: 0px;
 
     /* border-top: 1px solid black; */
-    padding-top: 25px;
-    padding-bottom: 15px;
     width: 100%;
 
     background-color: #F5F5F5;
@@ -40,7 +38,13 @@ main {
     display: inline-block;
     margin-right: 0;
     margin-left: 0;
-    width: 23%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    width: 24%;
+}
+
+#watch-toggle > section:hover {
+    background-color: #EAEAEA;
 }
 
 #watch-toggle i {
