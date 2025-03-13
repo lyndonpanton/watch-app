@@ -26,6 +26,34 @@ main {
 #watch-toggle {
     position: absolute;
     bottom: 0px;
+
+    /* border-top: 1px solid black; */
+    padding-top: 25px;
+    padding-bottom: 15px;
+    width: 100%;
+
+    background-color: #F5F5F5;
+    font-size: 1.5em;
+}
+
+#watch-toggle > section {
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+    width: 23%;
+}
+
+#watch-toggle i {
+    margin: auto auto 10px;
+    display: block;
+    text-align: center;
+}
+
+#watch-toggle .watch-toggle-text {
+    margin: auto;
+    display: block;
+
+    text-align: center;
 }
 
 @media screen and (max-width: 450px) {
