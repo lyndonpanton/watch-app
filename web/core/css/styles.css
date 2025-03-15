@@ -28,11 +28,10 @@ header i {
 
     position: relative;
     top: 35px;
-    left: 10px;
+    left: 40px;
 
     margin: 0;
     padding: 0;
-    width: 19%;
 
     text-align: center;
     font-size: 2em;
@@ -40,6 +39,19 @@ header i {
 
 main {
     height: 80vh;
+}
+
+#watch-information {
+    position: absolute;
+    left: -50vw;
+
+    border: 1px solid black;
+    /* height: 100vh; */
+    width: 50vw;
+}
+
+#watch-information.sidebar-open {
+
 }
 
 #watch-toggle {
