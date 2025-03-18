@@ -46,6 +46,10 @@ main {
     text-align: center;
 }
 
+.watch-hidden {
+    display: none;
+}
+
 #watch-clock {
     margin: 0 auto;
 }

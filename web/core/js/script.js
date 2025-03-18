@@ -5,13 +5,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let hamburger = document.getElementById("hamburger");
     hamburger.addEventListener("click", toggleSidebar);
 
+    let toggleSections = document.getElementsByClassName("watch-toggle-section");
+    
+    for (let i = 0; i < toggleSections.length; i++) {
+        toggleSections[i].addEventListener("click", toggleWatchSection);
+    }
+
     function setWatchClock() {
         let hourElement = document.getElementById("watch-clock-digital-hour");
         let minuteElement = document.getElementById("watch-clock-digital-minute");
         let secondElement = document.getElementById("watch-clock-digital-second");
 
         let currentDate = new Date();
-        
+
         let currentHour = currentDate.getHours() < 10 ?
                 "0" + currentDate.getHours()
                 : currentDate.getHours();
@@ -42,6 +48,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
             sidebar.classList.remove("sidebar-open");
         } else {
             sidebar.classList.add("sidebar-open");
+        }
+    }
+
+    function toggleWatchSection(event) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        let toggleSections = document.getElementsByClassName("watch-toggle-section");
+        
+        for (let i = 0; i < toggleSections.length; i++) {
+            let lastHypen = toggleSections[i].id.lastIndexOf("-");
+            let suffix = toggleSections[i].id.slice(lastHypen + 1);
+            let watchSectionId = "watch-" + suffix;
+
+            if (
+                toggleSections[i].id == event.target.id
+                || toggleSections[i].id == event.target.parentElement.id
+            ) {
+                document.getElementById(watchSectionId).classList.remove("watch-hidden");
+            } else {
+                document.getElementById(watchSectionId).classList.add("watch-hidden");
+            }
         }
     }
 });
