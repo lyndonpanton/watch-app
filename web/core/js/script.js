@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         secondElement.textContent = currentDate.getSeconds();
 
         // setInterval to start the clock…
+        setInterval(setWatchClock, 1000);
     }
     
     function setYear() {
