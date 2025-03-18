@@ -41,6 +41,33 @@ main {
     height: 80vh;
 }
 
+.watch-clock-digital-digit {
+    display: inline-block;
+    text-align: center;
+}
+
+#watch-clock {
+    margin: 0 auto;
+}
+
+#watch-clock-digital-hour {
+    text-align: center;
+}
+
+#watch-clock-digital-hour::after {
+    content: " : "
+}
+
+#watch-clock-digital-minute::after {
+    content: " : "
+}
+
+#watch-clock-digital > p {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+}
+
 #watch-information {
     position: absolute;
     left: -50vw;
