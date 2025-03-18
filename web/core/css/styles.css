@@ -79,7 +79,14 @@ main {
 }
 
 #watch-toggle > section:hover {
+    outline: 1px solid black;
     background-color: #EAEAEA;
+}
+
+#watch-toggle > section:active {
+    outline: 1px solid black;
+    background-color: #DADADA;
+    
 }
 
 #watch-toggle i {
