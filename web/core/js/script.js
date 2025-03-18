@@ -11,12 +11,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let secondElement = document.getElementById("watch-clock-digital-second");
 
         let currentDate = new Date();
+        
+        let currentHour = currentDate.getHours() < 10 ?
+                "0" + currentDate.getHours()
+                : currentDate.getHours();
+        let currentMinute = currentDate.getMinutes() < 10 ?
+                "0" + currentDate.getMinutes()
+                : currentDate.getMinutes();
+        let currentSecond = currentDate.getSeconds() < 10 ?
+                "0" + currentDate.getSeconds()
+                : currentDate.getSeconds();
 
-        hourElement.textContent = currentDate.getHours();
-        minuteElement.textContent = currentDate.getMinutes();
-        secondElement.textContent = currentDate.getSeconds();
+        hourElement.textContent = currentHour;
+        minuteElement.textContent = currentMinute;
+        secondElement.textContent = currentSecond;
 
-        // setInterval to start the clock…
         setInterval(setWatchClock, 1000);
     }
     
