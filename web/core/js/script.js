@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         toggleSections[i].addEventListener("click", toggleWatchSection);
     }
 
-    let stopwatchStart = document.getElementById("")
+    let stopwatchPlayPause = document.getElementById("stopwatch-play-pause");
+    stopwatchPlayPause.addEventListener("click", toggleStopWatch);
 
     function setWatchClock() {
         let hourElement = document.getElementById("watch-clock-digital-hour");
@@ -50,6 +51,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
             sidebar.classList.remove("sidebar-open");
         } else {
             sidebar.classList.add("sidebar-open");
+        }
+    }
+
+    function toggleStopWatch(event) {
+        // start / stop stopwatch
+
+        // Change stopwatch icon
+        let icon = document.getElementById("stopwatch-play-pause").children[0];
+
+        if (icon.classList.contains("fa-play")) {
+            icon.classList.remove("fa-play");
+            icon.classList.add("fa-pause");
+        } else {
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
         }
     }
 
