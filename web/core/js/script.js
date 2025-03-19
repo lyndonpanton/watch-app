@@ -98,26 +98,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let hourElement = document.getElementById("watch-stopwatch-digital-hour");
         let minuteElement = document.getElementById("watch-stopwatch-digital-minute");
         let secondElement = document.getElementById("watch-stopwatch-digital-second");
+        let millisecondElement = document.getElementById("watch-stopwatch-digital-millisecond");
 
-        let hourDigits = parseInt(document.getElementById("watch-stopwatch-digital-hour"));
-        let minuteDigits = parseInt(document.getElementById("watch-stopwatch-digital-minute"));
-        let secondDigits = parseInt(document.getElementById("watch-stopwatch-digital-second"));
+        let hourDigits = parseInt(hourElement.textContent);
+        let minuteDigits = parseInt(minuteElement.textContent);
+        let secondDigits = parseInt(secondElement.textContent);
+        let millisecondDigits = parseInt(millisecondElement.textContent);
 
-        console.log(hourElement.textContent + ", " + minuteElement.textContent + ", " + secondElement.textContent);
+        console.log(parseInt(millisecondElement.textContent) + 1);
 
-        secondElement.textContent = parseInt(secondElement.textContent) + 1;
-        
-        if (secondDigits == 0) {
-            secondElement.textContent = 1;
-        } else if (secondDigits < 59) {
-            secondElement.textContent = secondDigits + 1;
-        } else {
-            if (minuteDigits == 0) {
-                minuteElement.textContent = 1;
-            } else if (minuteDigits < 59) {
-                minuteElement.textContent = minuteDigits + 1;
+        // console.log(hourElement.textContent + ", " + minuteElement.textContent + ", " + secondElement.textContent);
+
+        // if (millisecondDigits != "59") {
+        //     millisecondElement.textContent = millisecondElement.textContent + 1;
+        // } else if (millisecondDigits == "59")
+
+        if (millisecondDigits < 100) {
+            if (millisecondDigits < 10) {
+                millisecondElement.textContent = "0" + millisecondDigits + 1;
             } else {
-                hourElement.textContent = hourDigits + 1;
+                millisecondElement.textContent = millisecondDigits + 1;
+            }
+        } else {
+            millisecondElement.textContent = "00";
+
+            if (secondDigits < 60) {
+                // if ()
+                secondElement.textContent = secondDigits + 1;
+            } else {
+                secondElement.textContent = 0;
             }
         }
     }
