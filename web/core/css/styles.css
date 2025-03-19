@@ -76,6 +76,26 @@ main {
     font-size: 2em;
 }
 
+#watch-clock {
+    margin: 0 auto;
+}
+
+#watch-stopwatch {
+    margin: 0 auto;
+}
+
+#watch-stopwatch-digits  {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+#watch-stopwatch-buttons  {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+}
+
 #watch-information {
     position: absolute;
     left: -50vw;

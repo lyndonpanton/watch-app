@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         toggleSections[i].addEventListener("click", toggleWatchSection);
     }
 
+    let stopwatchStart = document.getElementById("")
+
     function setWatchClock() {
         let hourElement = document.getElementById("watch-clock-digital-hour");
         let minuteElement = document.getElementById("watch-clock-digital-minute");
