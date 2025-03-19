@@ -58,6 +58,10 @@ main {
     content: " : "
 }
 
+#watch-stopwatch-digital-second.watch-digital-digit-second::after {
+    content: " . "
+}
+
 .watch-hidden {
     display: none;
 }

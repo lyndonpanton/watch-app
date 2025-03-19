@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     let stopwatchPlayPause = document.getElementById("stopwatch-play-pause");
+    let stopwatchPlayPauseInterval;
     stopwatchPlayPause.addEventListener("click", toggleStopWatch);
 
     function setWatchClock() {
@@ -55,17 +56,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     function toggleStopWatch(event) {
-        // start / stop stopwatch
-
-        // Change stopwatch icon
         let icon = document.getElementById("stopwatch-play-pause").children[0];
 
         if (icon.classList.contains("fa-play")) {
             icon.classList.remove("fa-play");
             icon.classList.add("fa-pause");
+            // start / stop stopwatch
+            stopwatchPlayPauseInterval = setInterval(updateStopWatch, 1);
+
         } else {
             icon.classList.remove("fa-pause");
             icon.classList.add("fa-play");
+            // start / stop stopwatch
+            clearInterval(stopwatchPlayPauseInterval);
         }
     }
 
@@ -87,6 +90,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 document.getElementById(watchSectionId).classList.remove("watch-hidden");
             } else {
                 document.getElementById(watchSectionId).classList.add("watch-hidden");
+            }
+        }
+    }
+
+    function updateStopWatch() {
+        let hourElement = document.getElementById("watch-stopwatch-digital-hour");
+        let minuteElement = document.getElementById("watch-stopwatch-digital-minute");
+        let secondElement = document.getElementById("watch-stopwatch-digital-second");
+
+        let hourDigits = parseInt(document.getElementById("watch-stopwatch-digital-hour"));
+        let minuteDigits = parseInt(document.getElementById("watch-stopwatch-digital-minute"));
+        let secondDigits = parseInt(document.getElementById("watch-stopwatch-digital-second"));
+
+        console.log(hourElement.textContent + ", " + minuteElement.textContent + ", " + secondElement.textContent);
+
+        secondElement.textContent = parseInt(secondElement.textContent) + 1;
+        
+        if (secondDigits == 0) {
+            secondElement.textContent = 1;
+        } else if (secondDigits < 59) {
+            secondElement.textContent = secondDigits + 1;
+        } else {
+            if (minuteDigits == 0) {
+                minuteElement.textContent = 1;
+            } else if (minuteDigits < 59) {
+                minuteElement.textContent = minuteDigits + 1;
+            } else {
+                hourElement.textContent = hourDigits + 1;
             }
         }
     }
