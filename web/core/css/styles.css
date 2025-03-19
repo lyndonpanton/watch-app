@@ -41,9 +41,21 @@ main {
     height: 80vh;
 }
 
-.watch-clock-digital-digit {
+.watch-digital-digit {
     display: inline-block;
     text-align: center;
+}
+
+.watch-digital-digit-hour {
+    text-align: center;
+}
+
+.watch-digital-digit-hour::after {
+    content: " : " 
+}
+
+.watch-digital-digit-minute::after {
+    content: " : "
 }
 
 .watch-hidden {
@@ -52,14 +64,6 @@ main {
 
 #watch-clock {
     margin: 0 auto;
-}
-
-#watch-clock-digital-hour {
-    text-align: center;
-}
-
-#watch-clock-digital-hour::after {
-    content: " : "
 }
 
 #watch-clock-digital-minute::after {
