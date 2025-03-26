@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/3556eab2e4.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script type="text/javascript" src="./js/stopwatch.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
@@ -55,11 +56,15 @@
                     <button id="stopwatch-play-pause" class="stop-watch-button"><i class="fa-solid fa-play"></i></button>
                     <button id="stopwatch-reset" class="stop-watch-button"><i class="fa-solid fa-rotate-left"></i></button>
                 </section> -->
-                <div id="stopwatch"></div>
+                <div id="stopwatch">
+                    <span id="stopwatch-hour">00</span>:
+                    <span id="stopwatch-minute">00</span>:
+                    <span id="stopwatch-second">00</span>.
+                    <span id="stopwatch-millisecond">0</span>
+                </div>
                 <button id="start">Start</button>
                 <button id="stop">Stop</button>
                 <button id="reset">Reset</button>
-
             </article>
             <article id="watch-timer" class="watch-hidden">
 
